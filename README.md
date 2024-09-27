@@ -2,17 +2,18 @@
 
 ##### VSCODE EXTENSION
 <p align="center">
-<img src="https://raw.githubusercontent.com/balmacefa/line_highlight_bookmark_vscode/master/images/logo.png" width="320px" />
+<img src="https://raw.githubusercontent.com/bluecaret/BookmarkBeacon/master/images/logo.png" width="320px" />
 </p>
-Forked from: https://github.com/chestozo/vscode-bookmarksng 
 
-Install: https://marketplace.visualstudio.com/items?itemName=balmacefa.linehighlightbookmarkvscode
+Forked from: [line_highlight_bookmark_vscode](https://github.com/balmacefa/line_highlight_bookmark_vscode) (which in turn was forked from: [vscode-bookmarksng](https://github.com/chestozo/vscode-bookmarksng))
+
+Install: 
 
 Bookmark with highlight lines.
 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/balmacefa/line_highlight_bookmark_vscode/master/images/example.gif" width="550px" />
+<img src="https://raw.githubusercontent.com/bluecaret/BookmarkBeacon/master/images/example.gif" width="550px" />
 </p>
 
 ## Shortcuts
@@ -71,6 +72,6 @@ These shortcuts  can be modified in Settings:
 
 - navigation to next / previous bookmark with a shortcut
 
-## Bye
+## Thank you!
 
-![imichi cat](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+▷ ▶ [Buy me a coffee](https://buymeacoffee.com/bluecaret) ◀ ◁
