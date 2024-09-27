@@ -20,11 +20,11 @@ Bookmark with highlight lines.
 
 These shortcuts can be modified in Settings:
 
-- `Cmd+B` (`Ctrl+B`) — toggle bookmarks (multi-cursor supported).
+- `Cmd+M` (`Ctrl+M`) — toggle bookmarks (multi-cursor supported).
 
 > Reference: lineHighlightBookmark.toogleBookmarks
 
-- `Cmd+Shift+B` (`Ctrl+Shift+B`) — clear all bookmarks in current file
+- `Cmd+Shift+M` (`Ctrl+Shift+M`) — clear all bookmarks in current file
 
   > Reference: lineHighlightBookmark.clearAllBookmarks
 
