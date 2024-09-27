@@ -12,7 +12,7 @@ import {
 } from './utils'
 import { handleEdit } from './handleEdit'
 
-const storeKey = 'lineHighlightBookmark'
+const storeKey = 'bookmarkbeacon'
 
 type Bookmarks = {
   [bookmarkKey: string]: {
@@ -39,10 +39,16 @@ export const bookmarksManager = {
       if (!this.bookmarks[this.filePath]) {
         this.bookmarks[this.filePath] = {}
       }
-      return key ? this.bookmarks[this.filePath][key] : this.bookmarks[this.filePath]
+      return key
+        ? this.bookmarks[this.filePath][key]
+        : this.bookmarks[this.filePath]
     }
   },
-  _setBookmarks(key: string | null = null, value: Bookmarks | null = null, deleteKey: boolean = false) {
+  _setBookmarks(
+    key: string | null = null,
+    value: Bookmarks | null = null,
+    deleteKey: boolean = false
+  ) {
     if (this.filePath) {
       if (!this.bookmarks[this.filePath]) {
         this.bookmarks[this.filePath] = {}
@@ -51,7 +57,7 @@ export const bookmarksManager = {
       if (key) {
         if (deleteKey) {
           delete this.bookmarks[this.filePath][key]
-          return;
+          return
         }
         this.bookmarks[this.filePath][key] = value
       } else {
@@ -82,7 +88,7 @@ export const bookmarksManager = {
         if (bookmark) {
           // @ts-ignore
           bookmark.decoration.dispose()
-          this._setBookmarks(key, null, true);
+          this._setBookmarks(key, null, true)
           someCleared = true
         }
       })
@@ -147,7 +153,8 @@ export const bookmarksManager = {
   _bookmarkLine(line: number, context: vscode.ExtensionContext) {
     const key = getKey(line)
     // @ts-ignore
-    const decoration = this._getBookmarks(key)?.decoration || createDecoration(context)
+    const decoration =
+      this._getBookmarks(key)?.decoration || createDecoration(context)
 
     const range = line2range(line)
     vscode.window.activeTextEditor?.setDecorations(decoration, [range])

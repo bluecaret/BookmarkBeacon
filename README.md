@@ -22,31 +22,31 @@ These shortcuts can be modified in Settings:
 
 - `Cmd+M` (`Ctrl+M`) — toggle bookmarks (multi-cursor supported).
 
-> Reference: lineHighlightBookmark.toogleBookmarks
+> Reference: bookmarkbeacon.toogleBookmarks
 
 - `Cmd+Shift+M` (`Ctrl+Shift+M`) — clear all bookmarks in current file
 
-  > Reference: lineHighlightBookmark.clearAllBookmarks
+  > Reference: bookmarkbeacon.clearAllBookmarks
 
 - `F2` — move cursor to the next bookmarked line of code (cursor is moved at the end of the line)
-  > Reference: lineHighlightBookmark.navigateToNextBookmark
+  > Reference: bookmarkbeacon.navigateToNextBookmark
 - `F2+Shift` — move cursor to the previous bookmarked line of code (cursor is moved at the end of the line)
-  > lineHighlightBookmark.navigateToPrevBookmark
+  > bookmarkbeacon.navigateToPrevBookmark
 
 ## Properties
 
 These properties can be modified in Settings:
 
 - `alignTopOnNavigation` If set bookmarked line will become the topmost when using next / previous navigation commands. `default: false`
-  > lineHighlightBookmark.alignTopOnNavigation
+  > bookmarkbeacon.alignTopOnNavigation
 - `renderLine` If set render a highlight line on the bookmark entire line. `default: true`
-  > lineHighlightBookmark.renderLine
+  > bookmarkbeacon.renderLine
 - `lineColor` Change the line color. (Ex: 'red', '#FFF' #FFFFFFF, 'RGB(255,255,255)','RGB(255, 255, 255. 0.5) ). `default: #65EAB9`
-  > lineHighlightBookmark.lineColor
+  > bookmarkbeacon.lineColor
 - `lineWidth`Change the line width `default: 1px`
-  > lineHighlightBookmark.lineWidth
+  > bookmarkbeacon.lineWidth
 - `lineStyle` Change the line style. `default: solid` options: - solid - dashed - inset - double - groove - outset - ridge
-  > lineHighlightBookmark.lineStyle
+  > bookmarkbeacon.lineStyle
 
 ## Features
 
