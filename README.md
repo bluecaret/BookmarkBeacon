@@ -13,7 +13,7 @@ Install:
 Bookmark with highlight lines, icon, and overview ruler highlight.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/bluecaret/BookmarkBeacon/master/images/example.gif" width="550px" />
+<img src="https://raw.githubusercontent.com/bluecaret/BookmarkBeacon/master/images/example.gif" width="760px" />
 </p>
 
 ## Shortcuts
