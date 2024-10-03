@@ -10,7 +10,7 @@ Forked from: [line_highlight_bookmark_vscode](https://github.com/balmacefa/line_
 
 Install:
 
-Bookmark with highlight lines.
+Bookmark with highlight lines, icon, and overview ruler highlight.
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/bluecaret/BookmarkBeacon/master/images/example.gif" width="550px" />
@@ -22,7 +22,7 @@ These shortcuts can be modified in Settings:
 
 - `Cmd+M` (`Ctrl+M`) — toggle bookmarks (multi-cursor supported).
 
-> Reference: bookmarkbeacon.toogleBookmarks
+  > Reference: bookmarkbeacon.toogleBookmarks
 
 - `Cmd+Shift+M` (`Ctrl+Shift+M`) — clear all bookmarks in current file
 
@@ -37,15 +37,28 @@ These shortcuts can be modified in Settings:
 
 These properties can be modified in Settings:
 
-- `alignTopOnNavigation` If set bookmarked line will become the topmost when using next / previous navigation commands. `default: false`
+- `alignTopOnNavigation` — If set bookmarked line will become the topmost when using next / previous navigation commands. `default: false`
+
   > bookmarkbeacon.alignTopOnNavigation
-- `renderLine` If set render a highlight line on the bookmark entire line. `default: true`
-  > bookmarkbeacon.renderLine
-- `lineColor` Change the line color. (Ex: 'red', '#FFF' #FFFFFFF, 'RGB(255,255,255)','RGB(255, 255, 255. 0.5) ). `default: #65EAB9`
+
+- `display` — Sets how the bookmark is displayed. Can choose between showing a line in the editor and overview ruler (`'line'`), an icon in the gutter (`'icon'`), or both. (default: `'both'`)
+
+  > bookmarkbeacon.display
+
+- `icon` — Choose which style of icon to show in the gutter. Options: `'icon'`, `'icon-color'`, `'logo'`, `'logo-color'`. (default: `'icon'`)
+
+  > bookmarkbeacon.icon
+
+- `lineColor` — Change the line color. (e.g. `'red'`, `'#FFF'` `'#FFFFFFF'`, `'RGB(255,255,255)'`,`'RGB(255, 255, 255. 0.5)'`) (default: `'#00FFFF'`)
+
   > bookmarkbeacon.lineColor
-- `lineWidth`Change the line width `default: 1px`
+
+- `lineWidth` — Change the line width (default: `3`)
+
   > bookmarkbeacon.lineWidth
-- `lineStyle` Change the line style. `default: solid` options: - solid - dashed - inset - double - groove - outset - ridge
+
+- `lineStyle` — Change the line style. Options: `'solid'`, `'dashed'`, `'inset'`, `'double'`, `'groove'`, `'outset'`, `'ridge'` (default: `'solid'`)
+
   > bookmarkbeacon.lineStyle
 
 ## Features
@@ -70,4 +83,8 @@ These properties can be modified in Settings:
 
 ## Thank you!
 
-▷ ▶ [Buy me a coffee](https://buymeacoffee.com/bluecaret) ◀ ◁
+Modified from [line_highlight_bookmark_vscode](https://github.com/balmacefa/line_highlight_bookmark_vscode).
+
+**Modifications made by [BlueCaret](https://github.com/bluecaret).**
+
+[Buy me a coffee](https://buymeacoffee.com/bluecaret)

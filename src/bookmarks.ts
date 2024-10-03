@@ -103,7 +103,7 @@ export const bookmarksManager = {
       )
       return data
     } catch (ex) {
-      logger.error(`_getStoredData ${ex.message}`)
+      logger.error(`_getStoredData ${(ex as any)?.message}`)
       return {}
     }
   },
@@ -154,7 +154,7 @@ export const bookmarksManager = {
     const key = getKey(line)
     // @ts-ignore
     const decoration =
-      this._getBookmarks(key)?.decoration || createDecoration(context)
+      (this._getBookmarks(key) as any)?.decoration || createDecoration(context)
 
     const range = line2range(line)
     vscode.window.activeTextEditor?.setDecorations(decoration, [range])

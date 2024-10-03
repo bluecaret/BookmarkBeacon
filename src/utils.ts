@@ -73,39 +73,58 @@ export const getPrevLine = (lines: number[], currentLine: number): number => {
 export const createDecoration = (
   context: vscode.ExtensionContext
 ): vscode.TextEditorDecorationType => {
-  let renderLine = vscode.workspace
+  let displayType = vscode.workspace
     .getConfiguration('bookmarkbeacon')
-    .get('renderLine', true)
-  if (renderLine) {
-    const borderColor: string = vscode.workspace
-      .getConfiguration('bookmarkbeacon')
-      .get('borderColor', '#65EAB9')
-    const borderWidth = vscode.workspace
-      .getConfiguration('bookmarkbeacon')
-      .get('borderWidth', '2px')
-    const borderStyle = vscode.workspace
-      .getConfiguration('bookmarkbeacon')
-      .get('borderStyle', 'solid')
-
+    .get('display', 'both')
+  const icon = vscode.workspace
+    .getConfiguration('bookmarkbeacon')
+    .get('icon', 'icon')
+  const borderColor: string = vscode.workspace
+    .getConfiguration('bookmarkbeacon')
+    .get('lineColor', '#00FFFF')
+  const borderWidth = vscode.workspace
+    .getConfiguration('bookmarkbeacon')
+    .get('lineWidth', 3)
+  const borderStyle = vscode.workspace
+    .getConfiguration('bookmarkbeacon')
+    .get('lineStyle', 'solid')
+  if (displayType === 'both') {
     const decorationOptions: vscode.DecorationRenderOptions = {
-      gutterIconPath: context.asAbsolutePath('images/icon.svg'),
+      gutterIconPath: context.asAbsolutePath(`images/gutter-${icon}.svg`),
       dark: {
-        gutterIconPath: context.asAbsolutePath('images/icond.svg'),
+        gutterIconPath: context.asAbsolutePath(
+          `images/gutter-${icon}-dark.svg`
+        ),
       },
       isWholeLine: true,
-      borderWidth: `0 0 ${borderWidth} 0`,
+      borderWidth: `0 0 ${borderWidth}px 0`,
       borderStyle: borderStyle,
       borderColor: borderColor,
+      overviewRulerColor: borderColor,
+      overviewRulerLane: vscode.OverviewRulerLane.Full,
     }
 
     return vscode.window.createTextEditorDecorationType(decorationOptions)
-  } else {
+  } else if (displayType === 'icon') {
     const decorationOptions: vscode.DecorationRenderOptions = {
-      gutterIconPath: context.asAbsolutePath('images/icon.svg'),
+      gutterIconPath: context.asAbsolutePath(`images/gutter-${icon}.svg`),
       dark: {
-        gutterIconPath: context.asAbsolutePath('images/icond.svg'),
+        gutterIconPath: context.asAbsolutePath(
+          `images/gutter-${icon}-dark.svg`
+        ),
       },
     }
+    return vscode.window.createTextEditorDecorationType(decorationOptions)
+  } else {
+    const decorationOptions: vscode.DecorationRenderOptions = {
+      isWholeLine: true,
+      borderWidth: `0 0 ${borderWidth}px 0`,
+      borderStyle: borderStyle,
+      borderColor: borderColor,
+      overviewRulerColor: borderColor,
+      overviewRulerLane: vscode.OverviewRulerLane.Full,
+    }
+
     return vscode.window.createTextEditorDecorationType(decorationOptions)
   }
 }

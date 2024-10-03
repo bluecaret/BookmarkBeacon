@@ -76,30 +76,58 @@
     ],
     "configuration": {
       "type": "object",
-      "title": "bookmarkbeacon configuration",
+      "title": "BookmarkBeacon",
       "properties": {
         "bookmarkbeacon.alignTopOnNavigation": {
           "type": "boolean",
           "default": false,
-          "description": "If set bookmarked line will become the topmost when using next / previous navigation commands"
+          "description": "Place the bookmarked line at the top of the window when using next/previous navigation commands."
         },
-        "bookmarkbeacon.renderLine": {
-          "type": "boolean",
-          "default": true,
-          "description": "If set render a line on the bookmark"
+        "bookmarkbeacon.display": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "both",
+            "line",
+            "icon"
+          ],
+          "enumItemLabels": [
+            "Both Line and Icon",
+            "Line in editor and in overview ruler",
+            "Icon in gutter"
+          ],
+          "default": "both",
+          "description": "Choose between showing a line in the editor and overview ruler, an icon in the gutter, or both."
+        },
+        "bookmarkbeacon.icon": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "icon",
+            "icon-color",
+            "logo",
+            "logo-color"
+          ],
+          "enumItemLabels": [
+            "Bookmark Icon (Gray)",
+            "Bookmark Icon (Color)",
+            "BookmarkBeacon Logo (Gray)",
+            "BookmarkBeacon Logo (Color)"
+          ],
+          "default": "icon",
+          "description": "Choose which icon to display in gutter (if enabled)."
         },
         "bookmarkbeacon.lineColor": {
-          "type": [
-            "string"
-          ],
-          "default": "#65EAB9",
-          "description": "Change the line color. (Ex: 'red', '#FFF' #FFFFFFF, 'RGB(255,255,255)','RGB(255, 255, 255. 0.5) )"
+          "type": "string",
+          "default": "#00FFFF",
+          "description": "Change the line color. (e.g. 'red', '#FFF' '#FFFFFFF', 'RGB(255,255,255)','RGB(255, 255, 255. 0.5)') (if enabled)"
         },
         "bookmarkbeacon.lineWidth": {
-          "type": [
-            "string"
-          ],
-          "default": "1px"
+          "type": "number",
+          "default": 3,
+          "description": "Width of the line in pixels (if enabled)"
         },
         "bookmarkbeacon.lineStyle": {
           "type": [
@@ -114,7 +142,8 @@
             "outset",
             "ridge"
           ],
-          "default": "solid"
+          "default": "solid",
+          "description": "Change the style of the line. (e.g. 'solid', 'dashed', 'inset', 'double', 'groove', 'outset', 'ridge') (if enabled)"
         }
       }
     }
